@@ -380,6 +380,11 @@ export class MenuConfig {
 
 						},
 						{
+							title: 'Hotel List',
+							page: 'booking/hotels'
+
+						},
+						{
 							title: 'My Bookings',
 							page: 'booking'
 

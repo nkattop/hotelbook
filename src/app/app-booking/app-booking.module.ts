@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
 	MatAutocompleteModule,
 	MatNativeDateModule,
-	
+
 	MatInputModule,
 	MatRadioModule,
 	MatButtonModule,
@@ -38,7 +38,7 @@ import {
 	MatBottomSheetRef,
 	MAT_DATE_LOCALE,
 	MAT_DATE_FORMATS
-	
+
 
 } from '@angular/material';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -58,6 +58,8 @@ import { AddBooking } from './AddBooking/addbooking'
 
 import { from } from 'rxjs';
 import { MaterialPreviewModule } from '../views/partials/content/general/material-preview/material-preview.module';
+import { HotelsComponent } from '../hotels/hotels.component';
+import { HotelComponent } from '../hotels/hotel/hotel.component';
 
 
 const routes: Routes = [
@@ -68,7 +70,8 @@ const routes: Routes = [
 	{
 		path: '',
 		component: AppBookingComponent
-	}
+	},
+	{ path: 'hotels', component: HotelsComponent }
 ];
 
 @NgModule({
@@ -113,15 +116,16 @@ const routes: Routes = [
 		ReactiveFormsModule,
 		MatFormFieldModule,
 		RouterModule.forChild(routes)
-		
+
 	],
 	exports: [RouterModule],
-	
-	
+
+
 	declarations: [
 		AppBookingComponent,
-		AddBooking
-		
+		AddBooking,
+		HotelsComponent,
+		HotelComponent
 	]
 })
-export class AppBookingModule {}
+export class AppBookingModule { }

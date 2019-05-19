@@ -1,0 +1,41 @@
+<article class="item" *ngFor="let hotel of hotelList">
+    <div class="item-wrapper">
+        <div class="item-image-wrapper pos-relative">
+            <div class="hotel-image" [ngStyle]="{'background-image': hotel.hotelImage}"></div>
+        </div>
+        <div class="item-flex-column">
+            <div class="item-details">
+                <div class="item-name item-name--link">
+                    <h3 class="m-0" [title]="hotel.hotelFullName">
+                        <span class="item-link name-copytext">{{hotel.hotelName}}</span>
+                    </h3>
+                </div>
+                <div class="stars-badges" *ngIf="hotel.rating > 0">
+                    <div class="rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        stars <span class="item-accommodation-type">Hotel</span>
+                    </div>
+                </div>
+                <div class="location ov-hidden" data-qa="info-slideout">
+                    <div class="item-link">
+                        <p>{{hotel.address}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="item-deal">
+            <div class="pos-relative">
+                <span class="discount-flag">{{hotel.discountValue}}</span>
+            </div>
+            <div class="amount-before">
+                <del>{{hotel.oldRate}}</del>
+            </div>
+            <div class="amount-now">
+                <span>{{hotel.newRate}}</span>
+            </div>
+            <button type="button" class="btn btn-regular">Book</button>
+        </section>
+    </div>
+</article>
