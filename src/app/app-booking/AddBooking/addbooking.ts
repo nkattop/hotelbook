@@ -2,9 +2,10 @@ import { Component, OnInit } from "@angular/core";
 import { FormControl, FormBuilder } from "@angular/forms";
 import { Observable } from "rxjs";
 import { startWith, map } from "rxjs/operators";
+import { Router } from "@angular/router";
 const basicCheckboxes = {
 	beforeCodeTitle: 'Basic checkboxes',
-	
+
 	tsCode: `
 import {Component} from '@angular/core';\n
 /**
@@ -24,8 +25,8 @@ export class CheckboxOverviewExample {}`,
 
 @Component({
 	selector: 'addbooking',
-	templateUrl: './addbooking.html'
-
+	templateUrl: './addbooking.html',
+	styleUrls: ['./addbooking.scss']
 })
 
 export class AddBooking implements OnInit {
@@ -63,14 +64,15 @@ export class AddBooking implements OnInit {
 		left: true,
 		middle: false,
 		right: false
-	};1
-	constructor(private fb: FormBuilder) {
-	this.stateCtrl = new FormControl();
+	}; 1
+	constructor(private fb: FormBuilder, private route: Router) {
+		this.stateCtrl = new FormControl();
 		this.filteredStates = this.stateCtrl.valueChanges
 			.pipe(
 				startWith(''),
-				map(state => state.length>1 ? this.filterStates(state) : this.states.slice())
-			);}
+				map(state => state.length > 1 ? this.filterStates(state) : this.states.slice())
+			);
+	}
 
 	filterStates(name: string) {
 		return this.states.filter(state =>
@@ -78,6 +80,10 @@ export class AddBooking implements OnInit {
 	}
 	ngOnInit() {
 		this.exampleBasicCheckboxes = basicCheckboxes;
+	}
+
+	searchHotel() {
+		this.route.navigate(['/default/booking/hotels']);
 	}
 }
 

@@ -15,3 +15,13 @@ kt-base {
 		height: 100%;
 	}
 }
+
+@media (min-width: 1025px) {
+	.kt-grid {
+	  .kt-grid__item {
+		.kt-wrapper#kt_wrapper {
+		  padding-top: 55px;
+		}
+	  }
+	}
+  }

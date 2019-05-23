@@ -1,0 +1,41 @@
+.custom-control {
+  box-shadow: 0 0 2px #5d78ff;
+  background: #ffffff;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  .mat-form-field-appearance-legacy {
+    .mat-form-field-wrapper {
+      .mat-form-field-underline {
+        height: 0;
+      }
+    }
+  }
+}
+
+label,
+input.mat-input-element {
+  color: #232323 !important;
+}
+
+/deep/ mat-checkbox {
+  margin-right: 8px;
+  label.mat-checkbox-layout {
+    .mat-checkbox-inner-container {
+      margin-right: 4px;
+    }
+  }
+}
+
+mat-checkbox {
+  margin-right: 8px;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+.search-btn{
+    width: 100%;
+}

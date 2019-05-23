@@ -3,9 +3,19 @@
 @import "../../../../../assets/demo/demo2/base/style.bundle.css";
 
 kt-base {
-	height: 100%;
+  height: 100%;
 
-	.kt-grid--root {
-		height: 100%;
-	}
+  .kt-grid--root {
+    height: 100%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .kt-grid {
+    .kt-grid__item {
+      .kt-wrapper {
+        padding-top: 55px;
+      }
+    }
+  }
 }

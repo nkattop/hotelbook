@@ -8,17 +8,20 @@ import { catchError, map } from 'rxjs/operators';
 import { QueryParamsModel, QueryResultsModel } from '../../_base/crud';
 import { environment } from '../../../../environments/environment';
 import { Router } from '@angular/router';
+import { BASE_URL, API_URLS } from '../../constans';
 
 const API_USERS_URL = 'api/users';
 const API_PERMISSION_URL = 'api/permissions';
 const API_ROLES_URL = 'api/roles';
 
-@Injectable()
-export class AuthService {
+@Injectable({
+    providedIn: 'root'
+})
+export class NewAuthService {
     constructor(private http: HttpClient) {}
-    // Authentication/Authorization
-    login(email: string, password: string): Observable<User> {
-        return this.http.post<User>(API_USERS_URL, { email, password });
+    login(email: string, password: string): Observable<any> {
+        let url = `${BASE_URL}${API_URLS.login}username=${email}&password=${password}`;
+        return this.http.get(url);
     }
 
     getUserByToken(): Observable<User> {

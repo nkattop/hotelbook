@@ -1,26 +1,23 @@
-
 <kt-portlet>
 	<!-- PORTLET LOADING | Binded to TABLE Datasource -->
 	<!-- See prop => '~/core/_crud/models/data-sources/_base.datasource.ts' (loading$) -->
-	<kt-portlet-header [title]="'Search Hotel'" [class]="'kt-portlet__head--lg'" >
-		
+	<kt-portlet-header [title]="'Search Hotel'" [class]="'kt-portlet__head--lg'">
+
 	</kt-portlet-header>
-	
+
 	<kt-portlet-body>
-		
 		<div class="kt-form">
-			
 			<div class="kt-form__filtration">
 				<div class="row align-items-center">
-
-					<div class="col-md-5 kt-margin-bottom-10-mobile">
-
-						<div class="kt-form__control">
+					<div class="col-md-4 kt-margin-bottom-10-mobile">
+						<div class="kt-form__control custom-control">
 							<mat-form-field class="example-full-width">
-								<input matInput placeholder="Enter Destination" aria-label="State" [matAutocomplete]="auto55" [formControl]="stateCtrl">
+								<input matInput placeholder="Enter Destination (where are you going?)"
+									aria-label="State" [matAutocomplete]="auto55" [formControl]="stateCtrl">
 								<mat-autocomplete #auto55="matAutocomplete">
 									<mat-option *ngFor="let state of filteredStates | async" [value]="state.name">
-										<img style="vertical-align:middle;" aria-hidden src="{{state.flag}}" height="25" />&nbsp;
+										<img style="vertical-align:middle;" aria-hidden src="{{state.flag}}"
+											height="25" />&nbsp;
 										<span>{{ state.name }}</span> |
 										<small>Population: {{state.population}}</small>
 									</mat-option>
@@ -28,65 +25,30 @@
 							</mat-form-field>
 						</div>
 					</div>
-
 					<div class="col-md-2 kt-margin-bottom-10-mobile">
-						<div class="kt-form__control">
+						<div class="kt-form__control custom-control">
 							<mat-form-field class="example-full-width">
-								<input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker5" placeholder="From">
+								<input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker5"
+									placeholder="From">
 								<mat-datepicker-toggle matSuffix [for]="picker5"></mat-datepicker-toggle>
 								<mat-datepicker #picker5></mat-datepicker>
 							</mat-form-field>
 						</div>
-
 					</div>
-
 					<div class="col-md-2 kt-margin-bottom-10-mobile">
-						<div class="kt-form__control">
+						<div class="kt-form__control custom-control">
 							<mat-form-field class="example-full-width">
-								<input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker6" placeholder="TO">
+								<input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker6"
+									placeholder="TO">
 								<mat-datepicker-toggle matSuffix [for]="picker6"></mat-datepicker-toggle>
 								<mat-datepicker #picker6></mat-datepicker>
 							</mat-form-field>
 						</div>
-
 					</div>
-
-
-				</div>
-				<div class="row">
-					<div class="col-md-4 kt-margin-bottom-10-mobile">
-						<div class="kt-form__control">
-							
-								<mat-checkbox [color]="'primary'" style="padding:5px">1*</mat-checkbox>
-
-								<mat-checkbox [color]="'primary'" style="padding:5px">2*</mat-checkbox>
-								<mat-checkbox [color]="'primary'" style="padding:5px">3*</mat-checkbox>
-								<mat-checkbox [color]="'primary'" style="padding:5px">4*</mat-checkbox>
-								<mat-checkbox [color]="'primary'" style="padding:5px">5*</mat-checkbox>
-							
-						</div>
-						<!--<div class="kt-section__content">
-			<div class="kt-section__content">
-				<div class="btn-group btn-group-toggle">
-					<label class="btn-primary" ngbButtonLabel>
-						<input type="checkbox" ngbButton [(ngModel)]="modelFirst.left"> Left (pre-checked)
-					</label>
-					<label class="btn-success" ngbButtonLabel>
-						<input type="checkbox" ngbButton [(ngModel)]="modelFirst.middle"> Middle
-					</label>
-					<label class="btn-info" ngbButtonLabel>
-						<input type="checkbox" ngbButton [(ngModel)]="modelFirst.right"> Right
-					</label>
-				</div>
-			</div>
-		</div>-->
-					</div>
-
 					<div class="col-md-2 kt-margin-bottom-10-mobile">
-						<div class="kt-form__control">
+						<div class="kt-form__control custom-control">
 							<mat-form-field class="example-full-width">
 								<mat-select placeholder="Adult">
-
 									<mat-option value="option1">1</mat-option>
 									<mat-option value="option2">2</mat-option>
 									<mat-option value="option3">3</mat-option>
@@ -96,16 +58,14 @@
 									<mat-option value="option3">7</mat-option>
 									<mat-option value="option3">8</mat-option>
 									<mat-option value="option3">9</mat-option>
-
 								</mat-select>
-								</mat-form-field>
+							</mat-form-field>
 						</div>
 					</div>
 					<div class="col-md-2 kt-margin-bottom-10-mobile">
-						<div class="kt-form__control">
+						<div class="kt-form__control custom-control">
 							<mat-form-field class="example-full-width">
 								<mat-select placeholder="Children">
-
 									<mat-option value="option1">1</mat-option>
 									<mat-option value="option2">2</mat-option>
 									<mat-option value="option3">3</mat-option>
@@ -115,28 +75,41 @@
 									<mat-option value="option3">7</mat-option>
 									<mat-option value="option3">8</mat-option>
 									<mat-option value="option3">9</mat-option>
-
 								</mat-select>
-								</mat-form-field>
+							</mat-form-field>
 						</div>
 					</div>
-
-					<div class="col-md-2 kt-margin-bottom-10-mobile">
-						<button mat-raised-button color="primary">Search Hotel</button>
+				</div>
+				<div class="row">
+					<div class="col-md-9 kt-margin-bottom-10-mobile">
+						<div class="kt-form__control">
+							<p class="mb-0">
+								<mat-label>Searching for</mat-label>
+							</p>
+							<mat-checkbox [color]="'primary'">1 Star</mat-checkbox>
+							<mat-checkbox [color]="'primary'">2 Star</mat-checkbox>
+							<mat-checkbox [color]="'primary'">3 Star</mat-checkbox>
+							<mat-checkbox [color]="'primary'">4 Star</mat-checkbox>
+							<mat-checkbox [color]="'primary'">5 Star</mat-checkbox>
+						</div>
+					</div>
+					<div class="col-md-3 kt-margin-bottom-10-mobile text-right">
+						<p class="mb-0">
+							<mat-label>&nbsp;</mat-label>
+						</p>
+						<button mat-raised-button class="search-btn" (click)="searchHotel()" color="primary">Search
+							Hotel</button>
 					</div>
 				</div>
-				</div>
-
-				<form class="example-form">
-
-					<br />
-
-				</form>
-				<!-- end::FILTERS -->
-				<!-- start::GROUP ACTIONS -->
-				<!-- Group actions list: 'Delete selected' | 'Fetch selected' | 'Update status for selected' -->
-				<!-- Group actions are shared for all LISTS | See '../../_shared' folder -->
-				<!--<div class="row align-items-center collapse kt-form__group-actions kt-margin-top-20 kt-margin-bottom-20"
+			</div>
+			<form class="example-form">
+				<br />
+			</form>
+			<!-- end::FILTERS -->
+			<!-- start::GROUP ACTIONS -->
+			<!-- Group actions list: 'Delete selected' | 'Fetch selected' | 'Update status for selected' -->
+			<!-- Group actions are shared for all LISTS | See '../../_shared' folder -->
+			<!--<div class="row align-items-center collapse kt-form__group-actions kt-margin-top-20 kt-margin-bottom-20"
 		 [ngClass]="{'show' : selection.selected.length > 0}">
 
 		<div class="col-xl-12">
@@ -172,35 +145,27 @@
 		</div>
 	</div>-->
 
-			</div>
+		</div>
 	</kt-portlet-body>
 
 	<kt-portlet-body>
 		<div class="mat-table__wrapper">
-			<mat-table class="lmat-elevation-z8"
-					   #table
-					   [dataSource]="dataSource"
-					   matSort
-					   #sort1="matSort"
-					   matSortActive="id"
-					   matSortDirection="asc"
-					   matSortDisableClear>
+			<mat-table class="lmat-elevation-z8" #table [dataSource]="dataSource" matSort #sort1="matSort"
+				matSortActive="id" matSortDirection="asc" matSortDisableClear>
 				<!-- Checkbox Column -->
 				<!-- Table with selection -->
 				<!-- https://run.stackblitz.com/api/angular/v1?file=app%2Ftable-selection-example.ts -->
 				<ng-container matColumnDef="select">
 					<mat-header-cell *matHeaderCellDef class="mat-column-checkbox">
 						<mat-checkbox (change)="$event ? masterToggle() : null"
-									  [checked]="selection.hasValue() && isAllSelected()"
-									  [indeterminate]="selection.hasValue() && !isAllSelected()"
-									  [color]="'primary'">
+							[checked]="selection.hasValue() && isAllSelected()"
+							[indeterminate]="selection.hasValue() && !isAllSelected()" [color]="'primary'">
 						</mat-checkbox>
 					</mat-header-cell>
 					<mat-cell *matCellDef="let row" class="mat-column-checkbox">
 						<mat-checkbox (click)="$event.stopPropagation()"
-									  (change)="$event ? selection.toggle(row) : null"
-									  [checked]="selection.isSelected(row)"
-									  [color]="'primary'">
+							(change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)"
+							[color]="'primary'">
 						</mat-checkbox>
 					</mat-cell>
 				</ng-container>
@@ -236,15 +201,18 @@
 				<ng-container matColumnDef="status">
 					<mat-header-cell *matHeaderCellDef mat-sort-header>Status</mat-header-cell>
 					<mat-cell *matCellDef="let customer">
-						<span class="kt-badge kt-badge--inline kt-badge--pill kt-badge--{{ getItemCssClassByStatus(customer.status) }} kt-badge--wide">{{  getItemStatusString(customer.status) }}</span>
+						<span
+							class="kt-badge kt-badge--inline kt-badge--pill kt-badge--{{ getItemCssClassByStatus(customer.status) }} kt-badge--wide">{{  getItemStatusString(customer.status) }}</span>
 					</mat-cell>
 				</ng-container>
 
 				<ng-container matColumnDef="type">
 					<mat-header-cell *matHeaderCellDef mat-sort-header>Type</mat-header-cell>
 					<mat-cell *matCellDef="let customer">
-						<span class="kt-badge kt-badge--{{ getItemCssClassByType(customer.type) }} kt-badge--dot"></span>&nbsp;
-						<span class="kt--font-bold kt-font-{{ getItemCssClassByType(customer.type) }}">{{ getItemTypeString(customer.type) }}</span>
+						<span
+							class="kt-badge kt-badge--{{ getItemCssClassByType(customer.type) }} kt-badge--dot"></span>&nbsp;
+						<span
+							class="kt--font-bold kt-font-{{ getItemCssClassByType(customer.type) }}">{{ getItemTypeString(customer.type) }}</span>
 					</mat-cell>
 				</ng-container>
 
@@ -298,4 +266,3 @@
 	</kt-portlet-body>
 	<!-- end::Body -->
 </kt-portlet>
-
