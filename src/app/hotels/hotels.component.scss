@@ -1,0 +1,47 @@
+.change-filter {
+  border-radius: 3px;
+  margin-bottom: 10px;
+  p {
+    font-size: 13px;
+    margin: 0 0 10px 0;
+    text-align: center;
+    font-weight: 500;
+  }
+  .search-values {
+    display: flex;
+    border: 1px solid #bdbdbd;
+    border-radius: 3px;
+    background: #fff;
+    > * {
+      border: none;
+      padding: 10px 5px;
+      border-right: 1px solid #bdbdbd;
+    }
+    &:last-chid {
+      border-right: none;
+    }
+    input[type="number"] {
+      flex-basis: 10%;
+      width: 10%;
+    }
+    input[type="text"],
+    input[type="date"],
+    label:first-child,
+    label:nth-child(2) {
+      flex-basis: 35%;
+      width: 35%;
+    }
+  }
+  .search-label {
+    display: flex;
+    label {
+      flex-basis: 10%;
+      width: 10%;
+      &:first-child,
+      &:nth-child(2) {
+        flex-basis: 35%;
+        width: 35%;
+      }
+    }
+  }
+}
