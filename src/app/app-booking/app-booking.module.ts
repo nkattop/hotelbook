@@ -60,6 +60,7 @@ import { from } from 'rxjs';
 import { MaterialPreviewModule } from '../views/partials/content/general/material-preview/material-preview.module';
 import { HotelsComponent } from '../hotels/hotels.component';
 import { HotelComponent } from '../hotels/hotel/hotel.component';
+import { HotelFilterComponent } from '../hotels/hotel-filter/hotel-filter.component';
 
 
 const routes: Routes = [
@@ -125,7 +126,8 @@ const routes: Routes = [
 		AppBookingComponent,
 		AddBooking,
 		HotelsComponent,
-		HotelComponent
+		HotelComponent,
+		HotelFilterComponent
 	]
 })
 export class AppBookingModule { }
