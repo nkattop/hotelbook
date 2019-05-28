@@ -9,6 +9,7 @@ import { AuthGuard } from '../../../core/auth';
 import { NgxPermissionsGuard } from 'ngx-permissions';
 // My Component
 import { MyPageComponent } from './../../pages/my-page/my-page.component';
+import { UserCartComponent } from '../../../../app/user-cart/user-cart.component';
 
 const routes: Routes = [
 	{

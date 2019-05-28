@@ -61,6 +61,7 @@ import { MaterialPreviewModule } from '../views/partials/content/general/materia
 import { HotelsComponent } from '../hotels/hotels.component';
 import { HotelComponent } from '../hotels/hotel/hotel.component';
 import { HotelFilterComponent } from '../hotels/hotel-filter/hotel-filter.component';
+// import { UserCartComponent } from '../user-cart/user-cart.component';
 
 
 const routes: Routes = [
@@ -126,6 +127,7 @@ const routes: Routes = [
 		AppBookingComponent,
 		AddBooking,
 		HotelsComponent,
+		// UserCartComponent,
 		HotelComponent,
 		HotelFilterComponent
 	]
